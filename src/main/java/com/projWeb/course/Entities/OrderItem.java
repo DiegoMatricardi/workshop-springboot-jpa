@@ -1,5 +1,6 @@
 package com.projWeb.course.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projWeb.course.Entities.pk.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -13,7 +14,7 @@ import java.util.Objects;
 public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    private OrderItemPK id;
+    private OrderItemPK id = new OrderItemPK();
     private Integer quantity;
     private double price;
 
@@ -38,7 +39,7 @@ public class OrderItem implements Serializable {
     public int hashCode() {
         return Objects.hashCode(id);
     }
-
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }

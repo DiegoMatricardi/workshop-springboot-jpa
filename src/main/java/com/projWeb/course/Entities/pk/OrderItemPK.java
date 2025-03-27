@@ -1,5 +1,6 @@
 package com.projWeb.course.Entities.pk;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projWeb.course.Entities.Order;
 import com.projWeb.course.Entities.Product;
 import jakarta.persistence.Embeddable;
@@ -30,7 +31,7 @@ public class OrderItemPK implements Serializable {
     public int hashCode() {
         return Objects.hash(order, product);
     }
-
+    @JsonIgnore
     public Order getOrder() {
         return order;
     }
