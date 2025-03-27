@@ -1,5 +1,6 @@
 package com.projWeb.course.Entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -12,7 +13,10 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd'T'HH:mm:ss'Z'",timezone = "GMT")
     private Instant moment;
+
     @ManyToOne /// generate association between customer and order at the database
     @JoinColumn(name = "client_id")/// creating the foreign key
     private User client;
