@@ -1,5 +1,6 @@
 package com.projWeb.course.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -23,6 +24,8 @@ public class Product implements Serializable {
     @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"),
     inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();///Evita que o produto tenha mais de uma cat igual.
+    @OneToMany(mappedBy = "id.product")
+    private Set<OrderItem> orderItems = new HashSet<>();
 
     public Product() {
     }
@@ -45,6 +48,14 @@ public class Product implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+    @JsonIgnore
+    public Set<Order> getOrders(){
+        Set<Order> set = new HashSet<>();
+        for (OrderItem orderItem : orderItems) {
+            set.add(orderItem.getOrder());
+        }
+        return set;
     }
 
     public Long getId() {
