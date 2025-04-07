@@ -14,6 +14,10 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public User insert(User obj){
+        return userRepository.save(obj);
+    }
+
     public List<User> findAll() {
         return userRepository.findAll();
     }
@@ -22,6 +26,5 @@ public class UserService {
        Optional <User> obj = userRepository.findById(id);
        return obj.get();
     }
-
 
 }
