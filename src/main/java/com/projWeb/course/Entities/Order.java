@@ -56,6 +56,14 @@ public class Order implements Serializable {
         return Objects.hashCode(id);
     }
 
+    public double getTotal(){
+        double sum = 0;
+        for (OrderItem item : items) {
+            sum += item.getSubTotal();
+        }
+        return sum;
+    }
+
     public Set<OrderItem> getItems() {
         return items;
     }
