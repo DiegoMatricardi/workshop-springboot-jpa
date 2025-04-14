@@ -7,11 +7,6 @@ O Projeto web services com Spring Boot e JPA/Hibernate é uma aplicação Back-e
 
 O objetivo do projeto é aplicar conceitos de **Programação Orientada a Objetos**, **Spring Boot**, **JPA/Hibernate** e desenvolvimento de APIs RESTful, criando uma solução simples e bem estruturada para um comércio eletrônico.
 
-## Database
-![Database](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
-
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
 
 # Tecnologias utilizadas
 ## Back end
