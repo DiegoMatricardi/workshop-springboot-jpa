@@ -28,7 +28,7 @@ git clone https://github.com/DiegoMatricardi/workshop-springboot-jpa.git
 cd workshop-springboot-jpa
 
 # executar o projeto
-Course Application
+CourseApplication
 ```
 # Autor
 
